@@ -1,0 +1,362 @@
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --green: #073b32;
+  --gold: #d8b56d;
+  --background: #f5f6f0;
+  --card: #ffffff;
+  --text: #18332d;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+  text-align: right;
+  padding-bottom: 75px;
+}
+
+header {
+  background: var(--card);
+  padding: 15px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--green);
+}
+
+.brand span {
+  font-size: 35px;
+  color: var(--gold);
+}
+
+.brand h2 {
+  margin: 0;
+}
+
+.brand small {
+  letter-spacing: 2px;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+}
+
+select, button {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+main {
+  max-width: 1050px;
+  margin: auto;
+  padding: 20px;
+}
+
+.hero {
+  background: linear-gradient(120deg, #073b32, #176c53);
+  color: white;
+  padding: 35px;
+  border-radius: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 260px;
+}
+
+.hero h1 {
+  font-size: 32px;
+  max-width: 520px;
+}
+
+.hero p {
+  color: #dcebe3;
+}
+
+.gold {
+  color: var(--gold);
+}
+
+.hero button, .next, .panel > button:not(.close) {
+  background: var(--gold);
+  color: #073b32;
+  border: none;
+  font-weight: bold;
+}
+
+.mosque {
+  font-size: 100px;
+}
+
+.date-box {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  background: var(--card);
+  padding: 18px;
+  border-radius: 15px;
+  margin: 20px 0;
+  text-align: center;
+  box-shadow: 0 5px 20px #0000000b;
+}
+
+.date-box div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.date-box small, .note, #status {
+  color: #71817b;
+}
+
+section h2 {
+  color: var(--green);
+}
+
+.next {
+  background: linear-gradient(110deg, #0b4a3c, #176c53);
+  color: white;
+  border-radius: 17px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.next h2 {
+  color: white;
+}
+
+.prayers {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.prayers div {
+  background: var(--card);
+  text-align: center;
+  padding: 15px 5px;
+  border-radius: 13px;
+  border: 1px solid #e5e8e2;
+}
+
+.prayers p {
+  margin: 5px;
+}
+
+.prayers b {
+  font-size: 17px;
+}
+
+.note {
+  font-size: 12px;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.features button, .features a {
+  background: var(--card);
+  color: var(--text);
+  text-decoration: none;
+  padding: 20px 12px;
+  border: 1px solid #e5e8e2;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  font-size: 24px;
+}
+
+.features strong {
+  font-size: 15px;
+}
+
+.features small {
+  font-size: 12px;
+  color: #71817b;
+}
+
+.panel {
+  background: var(--card);
+  padding: 25px;
+  margin: 25px 0;
+  text-align: center;
+  border-radius: 18px;
+  box-shadow: 0 5px 20px #0000000b;
+}
+
+.hidden {
+  display: none;
+}
+
+.close {
+  float: left;
+  font-size: 22px;
+}
+
+.compass {
+  border: 5px solid var(--gold);
+  width: 140px;
+  height: 140px;
+  margin: 20px auto;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 55px;
+}
+
+.arabic {
+  font-size: 27px;
+  color: var(--gold);
+}
+
+#count {
+  font-size: 55px;
+  font-weight: bold;
+}
+
+.tasbih {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: var(--green);
+  color: white;
+  border: 8px solid var(--gold);
+  font-size: 18px;
+}
+
+.panel article {
+  background: var(--background);
+  padding: 12px;
+  margin: 12px 0;
+  border-radius: 12px;
+}
+
+.panel article h3 {
+  color: #b58e44;
+}
+
+.verse {
+  background: #eee8d8;
+  color: #254b3d;
+  border-radius: 17px;
+  padding: 22px;
+  text-align: center;
+  margin-top: 35px;
+}
+
+.verse h2 {
+  font-size: 28px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #71817b;
+}
+
+.bottom {
+  display: none;
+}
+
+body.dark {
+  --background: #101b18;
+  --card: #182722;
+  --text: #e8f0eb;
+}
+
+body.dark header,
+body.dark .date-box,
+body.dark .prayers div,
+body.dark .features button,
+body.dark .features a,
+body.dark .panel {
+  background: var(--card);
+  color: var(--text);
+}
+
+@media(max-width:700px) {
+  .hero {
+    padding: 23px;
+    min-height: 250px;
+  }
+
+  .hero h1 {
+    font-size: 25px;
+  }
+
+  .mosque {
+    font-size: 60px;
+  }
+
+  .date-box {
+    padding: 12px 5px;
+  }
+
+  .date-box strong {
+    font-size: 11px;
+  }
+
+  .prayers {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .next {
+    padding: 14px;
+  }
+
+  .bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 65px;
+    background: var(--card);
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .bottom a, .bottom button {
+    text-decoration: none;
+    background: none;
+    border: none;
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 19px;
+  }
+
+  .bottom small {
+    font-size: 10px;
+  }
+  }
+  
