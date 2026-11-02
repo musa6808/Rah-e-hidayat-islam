@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#073b32">
+<title>Rah-e-Hidayat | راہِ ہدایت</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <span>۞</span>
+    <div>
+      <h2 data-key="brand">راہِ ہدایت</h2>
+      <small>RAH-E-HIDAYAT</small>
+    </div>
+  </div>
+  <div class="controls">
+    <select id="language">
+      <option value="ur">اردو</option>
+      <option value="ar">العربية</option>
+      <option value="en">English</option>
+      <option value="hi">हिन्दी</option>
+    </select>
+    <button id="theme">☾</button>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div>
+    <span class="gold">بسم اللہ الرحمٰن الرحیم</span>
+    <h1 data-key="welcome">اپنی زندگی کو نماز کے نور سے روشن کریں</h1>
+    <p data-key="intro">قرآن، نماز، قبلہ اور اذکار سب ایک جگہ۔</p>
+    <button id="location">📍 میرا مقام معلوم کریں</button>
+    <p id="status">نماز کے اوقات کے لیے مقام منتخب کریں۔</p>
+  </div>
+  <div class="mosque">🕌</div>
+</section>
+
+<section class="date-box">
+  <div><small>آج کی تاریخ</small><strong id="date">--</strong></div>
+  <div><small>ہجری تاریخ</small><strong id="hijri">--</strong></div>
+  <div><small>مقام</small><strong id="city">--</strong></div>
+</section>
+
+<section>
+  <h2 data-key="prayerTitle">نماز کے اوقات</h2>
+  <div class="next">
+    <div>
+      <small>اگلی نماز</small>
+      <h2 id="nextPrayer">--</h2>
+      <p id="nextHint">مقام منتخب کریں</p>
+    </div>
+    <div>
+      <small>باقی وقت</small>
+      <h2 id="countdown">--:--:--</h2>
+    </div>
+  </div>
+  <div class="prayers" id="prayers">
+    <div>🌅<p>فجر</p><b>--:--</b></div>
+    <div>☀️<p>ظہر</p><b>--:--</b></div>
+    <div>🌤️<p>عصر</p><b>--:--</b></div>
+    <div>🌇<p>مغرب</p><b>--:--</b></div>
+    <div>🌙<p>عشاء</p><b>--:--</b></div>
+  </div>
+  <p class="note">نماز کے اوقات حساب کے طریقے کے مطابق مختلف ہو سکتے ہیں۔ اپنے مقامی معتبر ادارے سے تصدیق کریں۔</p>
+</section>
+
+<section>
+  <h2>اسلامی سہولیات</h2>
+  <div class="features">
+    <button onclick="openPanel('qibla')">🧭<strong>قبلہ کی سمت</strong><small>قبلہ معلوم کریں</small></button>
+    <button onclick="openPanel('tasbih')">📿<strong>ڈیجیٹل تسبیح</strong><small>ذکر شمار کریں</small></button>
+    <a href="https://quran.com/" target="_blank">📖<strong>قرآن پاک</strong><small>تلاوت اور ترجمہ</small></a>
+    <button onclick="openPanel('dua')">🤲<strong>دعائیں اور اذکار</strong><small>روزانہ کے اذکار</small></button>
+  </div>
+</section>
+
+<section id="qibla" class="panel hidden">
+  <button class="close" onclick="closePanels()">×</button>
+  <h2>🧭 قبلہ کی سمت</h2>
+  <div class="compass">🕋</div>
+  <h2 id="degrees">--°</h2>
+  <p>شمال سے قبلہ کا زاویہ</p>
+  <button onclick="getLocation()">قبلہ معلوم کریں</button>
+</section>
+
+<section id="tasbih" class="panel hidden">
+  <button class="close" onclick="closePanels()">×</button>
+  <h2>📿 ڈیجیٹل تسبیح</h2>
+  <h2 class="arabic">سُبْحَانَ اللّٰهِ</h2>
+  <div id="count">0</div>
+  <button class="tasbih" onclick="increase()">ذکر شمار کریں</button>
+  <button onclick="resetCount()">دوبارہ شروع</button>
+</section>
+
+<section id="dua" class="panel hidden">
+  <button class="close" onclick="closePanels()">×</button>
+  <h2>🤲 دعائیں اور اذکار</h2>
+  <article>
+    <h3>بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</h3>
+    <p>اللہ کے نام سے جو نہایت مہربان، بہت رحم فرمانے والا ہے۔</p>
+  </article>
+  <article>
+    <h3>اَسْتَغْفِرُ اللّٰهَ</h3>
+    <p>میں اللہ سے مغفرت طلب کرتا ہوں۔</p>
+  </article>
+  <article>
+    <h3>سُبْحَانَ اللّٰهِ وَبِحَمْدِهِ</h3>
+    <p>اللہ پاک ہے اور اسی کی تعریف ہے۔</p>
+  </article>
+</section>
+
+<section class="verse">
+  <h2>فَإِنَّ مَعَ الْعُسْرِ يُسْرًا</h2>
+  <p>بے شک ہر مشکل کے ساتھ آسانی ہے۔</p>
+  <small>سورۃ الشرح 94:5</small>
+</section>
+</main>
+
+<footer>
+  <h3>۞ Rah-e-Hidayat</h3>
+  <p>اللہ ہمیں دین سیکھنے اور اس پر عمل کرنے کی توفیق عطا فرمائے۔ آمین</p>
+  <small>© 2026 Rah-e-Hidayat</small>
+</footer>
+
+<nav class="bottom">
+  <a href="#">⌂<small>ہوم</small></a>
+  <a href="#prayers">🕌<small>نماز</small></a>
+  <button onclick="openPanel('qibla')">🧭<small>قبلہ</small></button>
+  <button onclick="openPanel('tasbih')">📿<small>تسبیح</small></button>
+</nav>
+
+<script src="script.js"></script>
+</body>
+  </html>
+  
